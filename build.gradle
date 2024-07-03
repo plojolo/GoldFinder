@@ -1,0 +1,33 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id 'application'
+    id 'java'
+    id "org.openjfx.javafxplugin" version "0.1.0"
+}
+
+javafx {
+    version = "21"
+    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.graphics']
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
+    testImplementation("org.assertj:assertj-core:3.24.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClass.set("com.example.goldfinder.server.AppServer")
+}
+
+

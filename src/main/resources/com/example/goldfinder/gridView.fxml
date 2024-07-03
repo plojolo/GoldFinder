@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.goldfinder.UiClient">
+
+<HBox prefHeight="800.0" prefWidth="984.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <VBox prefHeight="800.0" prefWidth="118.0">
+        <Separator maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" />
+        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" text="Score" />
+        <Label fx:id="score" alignment="CENTER" contentDisplay="TEXT_ONLY" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" />
+        <Separator maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" />
+        <Label fx:id="infoLabel" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" text="Enter your username and join !" />
+        <TextField fx:id="username" prefHeight="24.0" prefWidth="200.0" text="No name" />
+        <Button fx:id="joinButton" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#joinButton" prefHeight="24.0" prefWidth="200.0" text="Join the party !" />
+        <Separator maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" />
+        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" text="Connection type" />
+        <ChoiceBox fx:id="connectionType" prefWidth="150.0" value="UDP">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="UDP" />
+                    <String fx:value="TCP" />
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+        <Separator maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" />
+        <CheckBox fx:id="OnlineButton" mnemonicParsing="false" selected="true" text="Multijoueur" />
+        <Separator maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" />
+        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" text="Game" />
+        <ChoiceBox fx:id="gameChoice" prefWidth="150.0" value="GoldFinder">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="GoldFinder" />
+                    <String fx:value="Cops vs. robbers" />
+                </FXCollections>
+            </items>
+        </ChoiceBox>
+        <Separator maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" />
+        <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="24.0" prefWidth="200.0" text="Scoreboard" />
+        <ListView fx:id="scoreboard" prefHeight="200.0" prefWidth="200.0" />
+    </VBox>
+    <Canvas fx:id="gridCanvas" height="800.0" width="800.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    </Canvas>
+
+</HBox>
+</AnchorPane>
